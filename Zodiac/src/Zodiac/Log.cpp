@@ -1,3 +1,4 @@
+#include "zopch.h"
 #include "Log.h"
 
 namespace Zodiac {

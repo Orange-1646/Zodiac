@@ -1,3 +1,6 @@
 [submodule ".\\Zodiac\\vendor\\spdlog"]
 	path = .\\Zodiac\\vendor\\spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "Zodiac/vendor/GLFW"]
+	path = Zodiac/vendor/GLFW
+	url = https://github.com/TheCherno/glfw.git

@@ -10,6 +10,10 @@ workspace "Zodiac"
 
 	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+	IncludeDir = {}
+	IncludeDir["GLFW"] = "Zodiac/vendor/GLFW/include"
+
+	include "Zodiac/vendor/GLFW"
 project "Zodiac"
 	location "Zodiac"
 	kind "SharedLib"
@@ -17,6 +21,9 @@ project "Zodiac"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "zopch.h"
+	pchsource "Zodiac/src/zopch.cpp"
 
 	files 
 	{
@@ -26,7 +33,15 @@ project "Zodiac"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

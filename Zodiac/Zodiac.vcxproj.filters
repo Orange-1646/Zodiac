@@ -4,6 +4,15 @@
     <Filter Include="Zodiac">
       <UniqueIdentifier>{BF8EE0E1-AB30-0BB8-94EB-1E0C802C9208}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Zodiac\Events">
+      <UniqueIdentifier>{C34D889A-2F0E-04D1-F848-4D4E64C848AD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{d5b5b1c7-5a83-4d89-acbd-07325a10ea4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{c25ded0d-c28b-43b1-9ab5-8e3ab9a78a00}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Zodiac.h" />
@@ -16,9 +25,24 @@
     <ClInclude Include="src\Zodiac\EntryPoint.h">
       <Filter>Zodiac</Filter>
     </ClInclude>
+    <ClInclude Include="src\Zodiac\Events\ApplicationEvent.h">
+      <Filter>Zodiac\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zodiac\Events\Event.h">
+      <Filter>Zodiac\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zodiac\Events\KeyEvent.h">
+      <Filter>Zodiac\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zodiac\Events\MouseEvent.h">
+      <Filter>Zodiac\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Zodiac\Log.h">
       <Filter>Zodiac</Filter>
     </ClInclude>
+    <ClInclude Include="src\zopch.h" />
+    <ClInclude Include="src\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Zodiac\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Zodiac\Application.cpp">
@@ -27,5 +51,7 @@
     <ClCompile Include="src\Zodiac\Log.cpp">
       <Filter>Zodiac</Filter>
     </ClCompile>
+    <ClCompile Include="src\zopch.cpp" />
+    <ClCompile Include="src\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
