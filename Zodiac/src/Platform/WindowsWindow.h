@@ -21,7 +21,7 @@ namespace Zodiac {
 
 		void* GetNativeWindow() const { return m_Window; };
 	private:
-		virtual void Init(const WindowProps props);
+		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();
 
 		GLFWwindow* m_Window;

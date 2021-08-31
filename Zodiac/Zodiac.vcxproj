@@ -149,7 +149,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Platform\WindowsWindow.h" />
     <ClInclude Include="src\Zodiac.h" />
     <ClInclude Include="src\Zodiac\Application.h" />
     <ClInclude Include="src\Zodiac\Core.h" />
@@ -163,7 +163,7 @@
     <ClInclude Include="src\zopch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
     <ClCompile Include="src\Zodiac\Application.cpp" />
     <ClCompile Include="src\Zodiac\Log.cpp" />
     <ClCompile Include="src\zopch.cpp">

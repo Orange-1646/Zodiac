@@ -2,6 +2,7 @@
 
 #include "zopch.h"
 #include "Zodiac/Events/Event.h"
+#include "Core.h"
 
 namespace Zodiac {
 
@@ -12,15 +13,15 @@ namespace Zodiac {
 		uint32_t Height;
 
 		WindowProps(const std::string& title = "Hazel Engine",
-			uint32_t width = 1600,
-			uint32_t height = 900)
+			uint32_t width = 1280,
+			uint32_t height = 720)
 			: Title(title), Width(width), Height(height)
 		{
 		}
 	};
 
 	// Interface representing a desktop system based Window
-	class Window
+	class ZODIAC_API Window
 	{
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;

@@ -1,6 +1,5 @@
 #pragma once
 
-
 #ifdef ZO_PLATFORM_WINDOWS
 
 extern Zodiac::Application* Zodiac::CreateApplication();
