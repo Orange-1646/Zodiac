@@ -25,7 +25,7 @@ namespace Zodiac {
 	};
 
 
-	class WindowCloseEvent : public Event \
+	class WindowCloseEvent : public Event
 	{
 	public:
 		WindowCloseEvent() = default;

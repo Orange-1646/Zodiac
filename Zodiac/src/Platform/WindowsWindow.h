@@ -2,6 +2,8 @@
 
 #include "Zodiac/Window.h"
 #include "GLFW/glfw3.h"
+#include "Zodiac/Events/ApplicationEvent.h"
+#include "Zodiac/Log.h"
 
 namespace Zodiac {
 	class WindowsWindow : public Window

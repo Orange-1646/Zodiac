@@ -49,15 +49,17 @@ namespace Zodiac {
 
 	class EventDispatcher
 	{
+	template<typename T>
+	using EventFn = std::function<bool(T&)>;
 	public:
 		EventDispatcher(Event& event)
 		: m_Event(event)
 		{
 		}
-		template<typename T, typename F>
-		bool Dispatch(const F& func)
+		template<typename T>
+		bool Dispatch(EventFn<T> func)
 		{
-			if (m_Event.GetEventType == T::GetStaticType())
+			if (m_Event.GetEventType() == T::GetStaticType())
 			{
 				m_Event.Handled |= func(static_cast<T&>(m_Event));
 				return true;
