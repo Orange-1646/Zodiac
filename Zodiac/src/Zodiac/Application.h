@@ -3,6 +3,8 @@
 #include "Core.h"
 #include "Window.h"
 #include "Zodiac/Events/ApplicationEvent.h"
+#include "Zodiac/Layer.h"
+#include "Zodiac/LayerStack.h"
 
 namespace Zodiac {
 
@@ -15,12 +17,16 @@ namespace Zodiac {
 		void Run();
 
 		void OnEvent(Event& e);
-
+		
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* overlay);
 
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+
+		LayerStack m_LayerStack;
 	};
 
 	Application* CreateApplication();

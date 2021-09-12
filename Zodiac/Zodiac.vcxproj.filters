@@ -37,6 +37,12 @@
     <ClInclude Include="src\Zodiac\Events\MouseEvent.h">
       <Filter>Zodiac\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Zodiac\Layer.h">
+      <Filter>Zodiac</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Zodiac\LayerStack.h">
+      <Filter>Zodiac</Filter>
+    </ClInclude>
     <ClInclude Include="src\Zodiac\Log.h">
       <Filter>Zodiac</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
       <Filter>Platform</Filter>
     </ClCompile>
     <ClCompile Include="src\Zodiac\Application.cpp">
+      <Filter>Zodiac</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zodiac\Layer.cpp">
+      <Filter>Zodiac</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Zodiac\LayerStack.cpp">
       <Filter>Zodiac</Filter>
     </ClCompile>
     <ClCompile Include="src\Zodiac\Log.cpp">

@@ -4,6 +4,8 @@
 
 #include "Zodiac/Application.h"
 
+#include "Zodiac/Layer.h"
+
 // Entry point
 
 #include "Zodiac/EntryPoint.h"

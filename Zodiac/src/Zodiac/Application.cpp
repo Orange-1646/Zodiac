@@ -2,7 +2,7 @@
 #include "Application.h"
 #include "Zodiac/Events/ApplicationEvent.h"
 #include "Zodiac/Log.h"
-#include "GLFW/glfw3.h"
+#include "glad/glad.h"
 
 namespace Zodiac {
 	
@@ -21,8 +21,14 @@ namespace Zodiac {
 			EventDispatcher dispatcher(e);
 
 			dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-
-
+			for (auto iter = m_LayerStack.end(); iter != m_LayerStack.begin();)
+			{
+				(*--iter)->OnEvent(e);
+				if (e.Handled)
+				{
+					break;
+				}
+			}
 		}
 
 		bool Application::OnWindowClose(WindowCloseEvent& e)
@@ -39,6 +45,21 @@ namespace Zodiac {
 				glClearColor(.3, .4, .5, 1.);
 				glClear(GL_COLOR_BUFFER_BIT);
 				m_Window->OnUpdate();
+
+				for (Layer* layer : m_LayerStack)
+				{
+					layer->OnUpdate();
+				}
 			}
+		}
+
+		void Application::PushLayer(Layer* layer)
+		{
+			m_LayerStack.PushLayer(layer);
+		}
+
+		void Application::PushOverlay(Layer* overlay)
+		{
+			m_LayerStack.PushOverlay(overlay);
 		}
 }

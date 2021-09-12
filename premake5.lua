@@ -12,8 +12,10 @@ workspace "Zodiac"
 
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "Zodiac/vendor/GLFW/include"
+	IncludeDir["Glad"] = "Zodiac/vendor/Glad/include"
 
 	include "Zodiac/vendor/GLFW"
+	include "Zodiac/vendor/Glad"
 project "Zodiac"
 	location "Zodiac"
 	kind "SharedLib"
@@ -35,12 +37,14 @@ project "Zodiac"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -52,7 +56,8 @@ project "Zodiac"
 		defines
 		{
 			"ZO_PLATFORM_WINDOWS",
-			"ZO_BUILD_DLL"
+			"ZO_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands 
@@ -62,14 +67,17 @@ project "Zodiac"
 
 	filter "configurations:Debug"
 		defines "ZO_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ZO_Release"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ZO_Dist"
+		buildoptions "/MD"
 		optimize "On"
 
 project "ZodiacPlayground"
@@ -104,17 +112,20 @@ project "ZodiacPlayground"
 
 		defines
 		{
-			"ZO_PLATFORM_WINDOWS",
+			"ZO_PLATFORM_WINDOWS"
 		}
 
 	filter "configurations:Debug"
 		defines "ZO_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ZO_Release"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ZO_Dist"
+		buildoptions "/MD"
 		optimize "On"
