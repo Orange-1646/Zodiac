@@ -5,12 +5,14 @@
 #include "glad/glad.h"
 
 namespace Zodiac {
-	
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+
+		Application* Application::s_Instance = nullptr;
+
 		Application::Application() 
 		{
+			s_Instance = this;
 			m_Window = std::unique_ptr<Window>(Window::Create());
-			m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+			m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 		};
 		Application::~Application() 
 		{
@@ -20,7 +22,7 @@ namespace Zodiac {
 			ZO_CORE_INFO("{0}", e);
 			EventDispatcher dispatcher(e);
 
-			dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+			dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
 			for (auto iter = m_LayerStack.end(); iter != m_LayerStack.begin();)
 			{
 				(*--iter)->OnEvent(e);
@@ -44,22 +46,25 @@ namespace Zodiac {
 			{
 				glClearColor(.3, .4, .5, 1.);
 				glClear(GL_COLOR_BUFFER_BIT);
-				m_Window->OnUpdate();
 
 				for (Layer* layer : m_LayerStack)
 				{
 					layer->OnUpdate();
 				}
+
+				m_Window->OnUpdate();
 			}
 		}
 
 		void Application::PushLayer(Layer* layer)
 		{
 			m_LayerStack.PushLayer(layer);
+			layer->OnAttach();
 		}
 
 		void Application::PushOverlay(Layer* overlay)
 		{
 			m_LayerStack.PushOverlay(overlay);
+			overlay->OnAttach();
 		}
 }

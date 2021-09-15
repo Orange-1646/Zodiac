@@ -13,9 +13,11 @@ workspace "Zodiac"
 	IncludeDir = {}
 	IncludeDir["GLFW"] = "Zodiac/vendor/GLFW/include"
 	IncludeDir["Glad"] = "Zodiac/vendor/Glad/include"
+	IncludeDir["imgui"] = "Zodiac/vendor/imgui"
 
 	include "Zodiac/vendor/GLFW"
 	include "Zodiac/vendor/Glad"
+	include "Zodiac/vendor/imgui"
 project "Zodiac"
 	location "Zodiac"
 	kind "SharedLib"
@@ -38,13 +40,15 @@ project "Zodiac"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.imgui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"imgui",
 		"opengl32.lib"
 	}
 

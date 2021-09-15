@@ -5,6 +5,7 @@
 #include "Zodiac/Application.h"
 
 #include "Zodiac/Layer.h"
+#include "Zodiac/ImGui/ImGuiLayer.h"
 
 // Entry point
 

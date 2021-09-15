@@ -9,7 +9,7 @@ namespace Zodiac {
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled,
-		KeyPressed, KeyReleased
+		KeyPressed, KeyReleased, KeyTyped
 	};
 
 	enum EventCategory
@@ -29,7 +29,7 @@ namespace Zodiac {
 
 	#define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class Event
+	class ZODIAC_API Event
 	{
 	public:
 		virtual ~Event() = default;

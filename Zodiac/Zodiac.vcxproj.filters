@@ -12,7 +12,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Platform\WindowsWindow.h">
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform</Filter>
     </ClInclude>
     <ClInclude Include="src\Zodiac.h" />
@@ -50,9 +50,13 @@
       <Filter>Zodiac</Filter>
     </ClInclude>
     <ClInclude Include="src\zopch.h" />
+    <ClInclude Include="src\Zodiac\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGL3Renderer.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGL3RendererLoader.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiGLFWRenderer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\WindowsWindow.cpp">
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform</Filter>
     </ClCompile>
     <ClCompile Include="src\Zodiac\Application.cpp">
@@ -68,5 +72,8 @@
       <Filter>Zodiac</Filter>
     </ClCompile>
     <ClCompile Include="src\zopch.cpp" />
+    <ClCompile Include="src\Zodiac\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGL3Renderer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiGLFWRenderer.cpp" />
   </ItemGroup>
 </Project>

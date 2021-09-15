@@ -3,6 +3,8 @@
 #include "Zodiac/Window.h"
 #include "GLFW/glfw3.h"
 #include "Zodiac/Events/ApplicationEvent.h"
+#include "Zodiac/Events/KeyEvent.h"
+#include "Zodiac/Events/MouseEvent.h"
 #include "Zodiac/Log.h"
 
 namespace Zodiac {
@@ -22,6 +24,7 @@ namespace Zodiac {
 		bool IsVSync() const override { return m_Data.vSync; };
 
 		void* GetNativeWindow() const { return m_Window; };
+
 	private:
 		virtual void Init(const WindowProps& props);
 		virtual void Shutdown();

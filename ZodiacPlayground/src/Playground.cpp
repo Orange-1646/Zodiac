@@ -36,6 +36,7 @@ class Playground : public Zodiac::Application
 public:
 	Playground() {
 		PushLayer(new  ExampleLayer());
+		PushOverlay(new Zodiac::ImGuiLayer());
 	};
 	~Playground() {};
 };
