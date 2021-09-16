@@ -155,6 +155,7 @@
     <ClInclude Include="src\Platform\OpenGL\ImGuiGLFWRenderer.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGL3Renderer.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGL3RendererLoader.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Zodiac.h" />
     <ClInclude Include="src\Zodiac\Application.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="src\Zodiac\Events\KeyEvent.h" />
     <ClInclude Include="src\Zodiac\Events\MouseEvent.h" />
     <ClInclude Include="src\Zodiac\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Zodiac\Input.h" />
     <ClInclude Include="src\Zodiac\Layer.h" />
     <ClInclude Include="src\Zodiac\LayerStack.h" />
     <ClInclude Include="src\Zodiac\Log.h" />
@@ -174,6 +176,7 @@
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\ImGuiGLFWRenderer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGL3Renderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Zodiac\Application.cpp" />
     <ClCompile Include="src\Zodiac\ImGui\ImGuiLayer.cpp" />

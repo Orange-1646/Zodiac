@@ -3,6 +3,7 @@
 #include "Zodiac/Events/ApplicationEvent.h"
 #include "Zodiac/Log.h"
 #include "glad/glad.h"
+#include "Input.h"
 
 namespace Zodiac {
 
@@ -19,7 +20,6 @@ namespace Zodiac {
 		};
 		void Application::OnEvent(Event& e)
 		{
-			ZO_CORE_INFO("{0}", e);
 			EventDispatcher dispatcher(e);
 
 			dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
@@ -53,6 +53,10 @@ namespace Zodiac {
 				}
 
 				m_Window->OnUpdate();
+
+				auto [x, y] = Input::GetMousePosition();
+
+				ZO_CORE_TRACE("{0}, {1}", x, y);
 			}
 		}
 

@@ -12,12 +12,10 @@ public:
 
 	void OnUpdate() override
 	{
-		ZO_INFO("ExampleLaye::Updated");
 	}
 
 	void OnEvent(Zodiac::Event& e) override
 	{
-		ZO_TRACE("{0}", e);
 	}
 
 	void OnAttach() override

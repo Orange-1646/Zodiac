@@ -52,8 +52,6 @@ namespace Zodiac {
 
 		static bool show = true;
 		ImGui::ShowDemoWindow(&show);
-		ZO_CORE_INFO("ImGuiLayer Attached-----------------------------");
-		ZO_CORE_INFO("{0}", show);
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	}
@@ -85,7 +83,6 @@ namespace Zodiac {
 		io.KeyAlt = io.KeysDown[GLFW_KEY_LEFT_ALT] || io.KeysDown[GLFW_KEY_RIGHT_ALT];
 		io.KeySuper = io.KeysDown[GLFW_KEY_RIGHT_SUPER] || io.KeysDown[GLFW_KEY_LEFT_SUPER];
 
-		ZO_CORE_INFO("ImGui Received MouseButtonPress Event {0}", e);
 		return false;
 	}
 
@@ -99,7 +96,6 @@ namespace Zodiac {
 		io.KeyAlt = io.KeysDown[GLFW_KEY_LEFT_ALT] || io.KeysDown[GLFW_KEY_RIGHT_ALT];
 		io.KeySuper = io.KeysDown[GLFW_KEY_RIGHT_SUPER] || io.KeysDown[GLFW_KEY_LEFT_SUPER];
 
-		ZO_CORE_INFO("ImGui Received MouseButtonPress Event {0}", e);
 		return false;
 	}
 
@@ -110,7 +106,6 @@ namespace Zodiac {
 		{
 			io.AddInputCharacter((unsigned short)e.GetChar());
 		}
-		ZO_CORE_INFO("ImGui Received KeyTyped Event {0}", e);
 		return false;
 	}
 
@@ -118,7 +113,6 @@ namespace Zodiac {
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.MouseDown[e.GetMouseButton()] = true;
-		ZO_CORE_INFO("ImGui Received MouseButtonPress Event {0}", e);
 		return false;
 	}
 
@@ -126,7 +120,6 @@ namespace Zodiac {
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.MouseDown[e.GetMouseButton()] = false;
-		ZO_CORE_INFO("ImGui Received MouseButtonReleasedEvent Event {0}", e);
 		return false;
 	}
 
@@ -134,7 +127,6 @@ namespace Zodiac {
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.MousePos = ImVec2(e.GetX(), e.GetY());
-		ZO_CORE_INFO("ImGui Received MouseMovedEvent Event {0}", e);
 		return false;
 	}
 
@@ -143,7 +135,6 @@ namespace Zodiac {
 		ImGuiIO& io = ImGui::GetIO();
 		io.MouseWheel += e.GetOffsetY();
 		io.MouseWheelH += e.GetOffsetX();
-		ZO_CORE_INFO("ImGui Received MouseScrolled Event {0}", e);
 		return false;
 	}
 
@@ -154,7 +145,6 @@ namespace Zodiac {
 		io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
 
 		glViewport(0, 0, e.GetWidth(), e.GetHeight());
-		ZO_CORE_INFO("ImGui Received MouseButtonPress Event {0}", e);
 		return false;
 	}
 

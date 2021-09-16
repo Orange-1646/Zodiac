@@ -70,7 +70,6 @@ namespace Zodiac {
 		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int charCode)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-				ZO_CORE_INFO("charcallback");
 				KeyTypedEvent keyTypedEvent(charCode);
 
 				data.EventCallback(keyTypedEvent);
@@ -82,21 +81,18 @@ namespace Zodiac {
 				{
 				case GLFW_PRESS:
 				{
-					ZO_CORE_INFO("Key Pressed");
 					KeyPressedEvent keyPressedEvent(key, 0);
 					data.EventCallback(keyPressedEvent);
 					break;
 				}
 				case GLFW_RELEASE:
 				{
-					ZO_CORE_INFO("Key Released");
 					KeyReleasedEvent keyReleasedEvent(key);
 					data.EventCallback(keyReleasedEvent);
 					break;
 				}
 				case GLFW_REPEAT:
 				{
-					ZO_CORE_INFO("Key Repeat");
 					KeyPressedEvent keyPressedEvent(key, 1);
 					data.EventCallback(keyPressedEvent);
 					break;
@@ -110,14 +106,12 @@ namespace Zodiac {
 				{
 				case GLFW_PRESS:
 				{
-					ZO_CORE_INFO("Mouse Pressed");
 					MouseButtonPressedEvent mousePressedEvent(button);
 					data.EventCallback(mousePressedEvent);
 					break;
 				}
 				case GLFW_RELEASE:
 				{
-					ZO_CORE_INFO("Release Released");
 					MouseButtonReleasedEvent mouseButtonReleasedEvent(button);
 					data.EventCallback(mouseButtonReleasedEvent);
 					break;
@@ -127,7 +121,6 @@ namespace Zodiac {
 		glfwSetScrollCallback(m_Window, [](GLFWwindow* window, double xOffset, double yOffset)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-				ZO_CORE_INFO("Scrolling: {0} - {1}", xOffset, yOffset);
 				MouseScrolledEvent mouseScrolledEvent(xOffset, yOffset);
 				data.EventCallback(mouseScrolledEvent);
 			});
@@ -135,11 +128,12 @@ namespace Zodiac {
 		glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xPos, double yPos)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-				ZO_CORE_INFO("Cursor Moving: {0} - {1}", xPos, yPos);
 
 				MouseMovedEvent mouseMovedEvent(xPos, yPos);
 				data.EventCallback(mouseMovedEvent);
 			});
+
+
 	}
 
 	void WindowsWindow::Shutdown()

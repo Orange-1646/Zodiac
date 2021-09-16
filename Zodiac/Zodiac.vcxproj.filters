@@ -54,6 +54,8 @@
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGL3Renderer.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGL3RendererLoader.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiGLFWRenderer.h" />
+    <ClInclude Include="src\Zodiac\Input.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
@@ -75,5 +77,6 @@
     <ClCompile Include="src\Zodiac\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGL3Renderer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiGLFWRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>
